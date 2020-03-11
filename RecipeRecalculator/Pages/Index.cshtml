@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Recipe Recalculator</h1>
+
+    <div class="card" style="margin-top:50px;">
+        <h5 class="card-header">General Information</h5>
+        <div class="card-body">
+            <h5 class="card-title">What does this application do?</h5>
+            <p class="card-text">Have you ever wanted to cook for friends and family, 
+            but have a recipe that serves too few or too many people than what you need?
+            Recipe recalculator will recalculate a given recipe so the amount of each ingredient
+            now reflects the actual quantity you need to feed the number of people you want to serve.</p>
+            <h5 class="card-title">How does it work?</h5>
+            <p class="card-text">It's simple! We will ask you for general information such as the name of the
+            recipe, how many people it currently serves, and how many people you want it to serve. Then you will
+            input the names, quantities, and units of your recipe's ingredients. We'll take care of the rest and give
+            you a PDF file containing your recalculated recipe! Just click the button below to get started!</p>
+            <a class="btn btn-primary" href="/BasicInfo" style="margin-top:25px;">Get Started</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+﻿@page
+@model RecipeRecalculator.BasicInfoModel
+@{
+    ViewData["Title"] = "BasicInfo";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Let's Get Started With Some Basic Information</h1>
+    <form name="basicInfoForm" action="/CurrentIngredients" method="post">
+        <div class="card" style="margin-top:35px;">
+            <div class="form-group my-3">
+                <label for="recipeName">What is the name of your recipe?</label>
+                <input type="text" class="form-control w-50 mx-auto text-center" id="recipeName" placeholder="Recipe Name" required>
+            </div>
+            <div class="form-group my-3">
+                <label for="numIngredients">How many ingredients does your recipe use?</label>
+                <input type="number" class="form-control w-50 mx-auto text-center" id="numIngredients" min="1" placeholder="Enter a whole number" required>
+                <small id="numIngredientsHelp" class="form-text text-muted">Ex: A recipe that uses one stick of <b>butter</b> and two quarts <b>milk</b> would have a <b>2</b> here</small>
+            </div>
+            <div class="form-group my-3">
+                <label for="numPeopleCurrent">How many people does the recipe <b>currently</b> serve?</label>
+                <input type="number" class="form-control w-50 mx-auto text-center" id="numPeopleCurrent" min="1" placeholder="Enter a whole number" required>
+            </div>
+            <div class="form-group my-3">
+                <label for="numPeopleNew">How many people would you like it to serve?</label>
+                <input type="number" class="form-control w-50 mx-auto text-center" id="numPeopleNew" min="1" placeholder="Enter a whole number" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-4 my-3">Next -></button>
+    </form>
+</div>
+
+
+
