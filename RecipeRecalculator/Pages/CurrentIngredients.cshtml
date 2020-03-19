@@ -4,5 +4,47 @@
     ViewData["Title"] = "CurrentIngredients";
 }
 
-<h1>CurrentIngredients</h1>
+@using RecipeRecalculator.Controllers
+@using RecipeRecalculator.Models
+
+
+@{ 
+    var fields = new List<Ingredient>();
+
+    for (int i = 0; i < BasicInfoController.recipes[0].NumIngredients; i++)
+    {
+        fields.Add(new Ingredient());       // Create an empty list of ingredient objects
+    }
+
+    // Source of help: https://stackoverflow.com/questions/51775643/how-to-pass-model-list-to-controller
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Now Tell Us About The Ingredients of @BasicInfoController.recipes[0].Name</h1>
+    <form name="ingredientsForm" method="POST" enctype="application/x-www-form-urlencoded">
+
+        @for (int i = 1; i <= BasicInfoController.recipes[0].NumIngredients; i++)
+        {
+                <div class="form-row mt-4 mb-4">
+                    <div class="col">
+                        <input type="text" asp-for="@fields[(i-1)].Name" id="nameOfIngredient @i" class="form-control" placeholder="Name of Ingredient # @i" required />
+                    </div>
+                    <div class="col">
+                        <input type="number" asp-for="@fields[(i-1)].AmountBeforeConversion" id="amountOfIngredient @i" class="form-control" placeholder="Amount of Ingredient # @i" required />
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" asp-for="@fields[(i-1)].Unit" required>
+                            <option selected>Select the appropriate unit of measure</option>
+                            <option value="grams">Grams</option>
+                            <option value="milligrams">Milligrams</option>
+                            <option value="kilograms">Kilograms</option>
+                            <option value="quarts">Quarts</option>
+                        </select>
+                    </div>
+                </div>
+        }
+
+        <button type="submit" class="btn btn-primary mb-4 my-3">Generate New Recipe</button>
+    </form>
+</div>
 

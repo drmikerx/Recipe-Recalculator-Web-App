@@ -1,0 +1,13 @@
+﻿@page
+@model RecipeRecalculator.ResultsModel
+@{
+    ViewData["Title"] = "Results";
+}
+
+@using RecipeRecalculator.Controllers
+
+<h1>Results</h1>
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Here is your new recipe for @BasicInfoController.recipes[0].Name that now serves @BasicInfoController.recipes[0].NumPeopleNew people!</h1>
+</div>

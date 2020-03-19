@@ -7,12 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RecipeRecalculator
 {
-    public class CurrentIngredientsModel : PageModel
+    public class ResultsModel : PageModel
     {
         public void OnGet()
         {
 
         }
-
     }
 }
