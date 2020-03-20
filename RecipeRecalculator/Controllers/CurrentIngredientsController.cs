@@ -23,7 +23,8 @@ namespace RecipeRecalculator.Controllers
             }
 
             // adjustment factor = old number of people / desired number of people
-            double adjustmentFactor = BasicInfoController.recipes[0].NumPeopleCurrent / BasicInfoController.recipes[0].NumPeopleNew;
+            // need to prevent integer division so convert one element to double
+            double adjustmentFactor = Convert.ToDouble(BasicInfoController.recipes[0].NumPeopleCurrent) / BasicInfoController.recipes[0].NumPeopleNew;
 
             foreach (var item in BasicInfoController.recipes[0].IngredientsList)
             {

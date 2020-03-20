@@ -5,9 +5,25 @@
 }
 
 @using RecipeRecalculator.Controllers
+@using System.Web
 
-<h1>Results</h1>
 
 <div class="text-center">
-    <h1 class="display-4 mb-4">Here is your new recipe for @BasicInfoController.recipes[0].Name that now serves @BasicInfoController.recipes[0].NumPeopleNew people!</h1>
+    <h1 class="display-4 mb-4">Here is your new recipe for @HttpUtility.HtmlDecode(BasicInfoController.recipes[0].Name) that now serves @BasicInfoController.recipes[0].NumPeopleNew people!</h1>
+
+    @for (int i = 0; i < BasicInfoController.recipes[0].NumIngredients; i++)
+    {
+        <div class="form-row mt-4 mb-4">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="@BasicInfoController.recipes[0].IngredientsList[i].Name" readonly />
+            </div>
+            <div class="col">
+                <input type="number" class="form-control" placeholder="@BasicInfoController.recipes[0].IngredientsList[i].AmountAfterConversion" readonly />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="@BasicInfoController.recipes[0].IngredientsList[i].Unit" readonly />
+            </div>
+        </div>
+    }
+
 </div>

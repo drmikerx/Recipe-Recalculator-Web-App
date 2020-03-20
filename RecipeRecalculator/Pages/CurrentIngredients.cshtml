@@ -6,6 +6,7 @@
 
 @using RecipeRecalculator.Controllers
 @using RecipeRecalculator.Models
+@using System.Web
 
 
 @{ 
@@ -20,7 +21,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4 mb-4">Now Tell Us About The Ingredients of @BasicInfoController.recipes[0].Name</h1>
+    <h1 class="display-4 mb-4">Now Tell Us About The Ingredients of @HttpUtility.HtmlDecode(BasicInfoController.recipes[0].Name)</h1>
     <form name="ingredientsForm" method="POST" enctype="application/x-www-form-urlencoded">
 
         @for (int i = 1; i <= BasicInfoController.recipes[0].NumIngredients; i++)
