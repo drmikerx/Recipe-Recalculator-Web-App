@@ -17,20 +17,6 @@ namespace RecipeRecalculator
 
         }
 
-        /*
-        public void OnPost()
-        {
-            var request = HttpContext.Request;
-            var stream = new StreamReader(request.Body);
-            var body = stream.ReadToEndAsync();
-
-            System.Diagnostics.Debug.WriteLine("Where's Waldo");
-            System.Diagnostics.Debug.WriteLine(request.Body.ToString());
-            
-            Response.Redirect("/CurrentIngredients");
-        }
-
-        */
         
     }
 }

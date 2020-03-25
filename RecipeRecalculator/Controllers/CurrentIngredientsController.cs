@@ -30,6 +30,9 @@ namespace RecipeRecalculator.Controllers
             {
                 // new quantity = original quantity / adjustment factor
                 item.AmountAfterConversion = item.AmountBeforeConversion / adjustmentFactor;
+
+                // Round the result to 2 decimal place so it's more user friendly
+                item.AmountAfterConversion = Math.Round(item.AmountAfterConversion, 2);
             }
 
             Response.Redirect("/Results");
