@@ -19,18 +19,7 @@ namespace RecipeRecalculator.Models
         public int NumPeopleNew { get; set; }
         public List<Ingredient> IngredientsList { get; set; }
 
-        /*
-        public Recipe(string NameOf, int NumberIngredients, int NumberCurrentPeople, int NumberNewPeople)
-        {
-            Name = NameOf;
-            NumIngredients = NumberIngredients;
-            NumPeopleCurrent = NumberCurrentPeople;
-            NumPeopleNew = NumberNewPeople;
-            IngredientsList = new List<Ingredient>();
-        }
-
-        */
-
+        // Member variables have their values set after object instantiation
         public Recipe() { }
     }
 }

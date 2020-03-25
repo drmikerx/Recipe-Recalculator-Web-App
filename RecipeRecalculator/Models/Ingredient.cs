@@ -13,17 +13,6 @@ namespace RecipeRecalculator.Models
         public string Unit { get; set; }
 
 
-        /*
-        public Ingredient(string NameOf, double AmountBefore, string UnitOfMeasure)
-        {
-            Name = NameOf;
-            AmountBeforeConversion = AmountBefore;
-            AmountAfterConversion = 0;     // Will be assigned later
-            Unit = UnitOfMeasure;
-        }
-
-        */
-
-        public Ingredient() { }
+        public Ingredient() { }     // Member variables have their values set via form after object instantiation
     }
 }
