@@ -28,18 +28,21 @@
         {
                 <div class="form-row mt-4 mb-4">
                     <div class="col">
-                        <input type="text" asp-for="@fields[(i-1)].Name" id="nameOfIngredient @i" class="form-control" placeholder="Name of Ingredient # @i" required />
+                        <label for="@fields[(i-1)].Name">Name of Ingredient # @i</label>
+                        <input type="text" asp-for="@fields[(i-1)].Name" id="nameOfIngredient @i" class="form-control text-center" required />
                     </div>
                     <div class="col">
-                        <input type="number" asp-for="@fields[(i-1)].AmountBeforeConversion" id="amountOfIngredient @i" class="form-control" placeholder="Amount of Ingredient # @i" step="0.01" min="0.01" required />
+                        <label for="@fields[(i-1)].AmountBeforeConversion">Amount of Ingredient # @i</label>
+                        <input type="number" asp-for="@fields[(i-1)].AmountBeforeConversion" id="amountOfIngredient @i" class="form-control text-center" placeholder="1.00" step="0.01" min="0.01" required />
                     </div>
                     <div class="col">
+                        <label for="@fields[(i-1)].Unit">Unit of Measure of Ingredient # @i</label>
                         <select class="custom-select" asp-for="@fields[(i-1)].Unit" required>
                             <option disabled selected>Select the appropriate unit of measure</option>
-                            <option value="grams">Grams</option>
-                            <option value="milligrams">Milligrams</option>
-                            <option value="kilograms">Kilograms</option>
-                            <option value="quarts">Quarts</option>
+                            <option value="Grams">Grams</option>
+                            <option value="Milligrams">Milligrams</option>
+                            <option value="Kilograms">Kilograms</option>
+                            <option value="Quarts">Quarts</option>
                         </select>
                     </div>
                 </div>
