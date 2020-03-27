@@ -39,10 +39,30 @@
                         <label for="@fields[(i-1)].Unit">Unit of Measure of Ingredient # @i</label>
                         <select class="custom-select" asp-for="@fields[(i-1)].Unit" required>
                             <option disabled selected>Select the appropriate unit of measure</option>
-                            <option value="Grams">Grams</option>
-                            <option value="Milligrams">Milligrams</option>
-                            <option value="Kilograms">Kilograms</option>
-                            <option value="Quarts">Quarts</option>
+                            <optgroup label="Weight - Imperial">
+                                <option value="Ounces (oz)">Ounces (oz)</option>
+                                <option value="Pounds (lbs)">Pounds (lbs)</option>
+                                <option value="Tons (t)">Tons (t)</option>
+                            </optgroup>
+                            <optgroup label="Weight - Metric">
+                                <option value="Milligrams (mg)">Milligrams (mg)</option>
+                                <option value="Grams (g)">Grams (g)</option>
+                                <option value="Kilograms (kg)">Kilograms (kg)</option>
+                            </optgroup>
+                            <optgroup label="Volume - Imperial">
+                                <option value="Pints (pt)">Pints (pt)</option>
+                                <option value="Quarts (qt)">Quarts (qt)</option>
+                                <option value="Gallons (gal)">Gallons (gal)</option>
+                            </optgroup>
+                            <optgroup label="Volume - Metric">
+                                <option value="Milliliters (mL)">Milliliters (mL)</option>
+                                <option value="Liters (L)">Liters (L)</option>
+                            </optgroup>
+                            <optgroup label="Miscellaneous">
+                                <option value="Pinches">Pinches</option>
+                                <option value="Dollops">Dollops</option>
+                                <option value="Other">Other</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>
