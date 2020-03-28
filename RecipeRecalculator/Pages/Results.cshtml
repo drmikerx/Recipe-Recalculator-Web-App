@@ -15,12 +15,15 @@
     {
         <div class="form-row mt-4 mb-4">
             <div class="col">
+                <label for="Name">Name of Ingredient # @(i+1)</label>
                 <input type="text" class="form-control text-center" placeholder="@HttpUtility.HtmlDecode(BasicInfoController.recipes[0].IngredientsList[i].Name)" readonly />
             </div>
             <div class="col">
+                <label for="AmountAfterConversion">New Amount of Ingredient # @(i+1)</label>
                 <input type="number" class="form-control text-center" placeholder="@BasicInfoController.recipes[0].IngredientsList[i].AmountAfterConversion" readonly />
             </div>
             <div class="col">
+                <label for="Unit">Unit of Measure of Ingredient # @(i+1)</label>
                 <input type="text" class="form-control text-center" placeholder="@BasicInfoController.recipes[0].IngredientsList[i].Unit" readonly />
             </div>
         </div>
